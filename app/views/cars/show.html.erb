@@ -1,1 +1,21 @@
-<h1> <%= @car.brand %> <%= @car.model %> </h1>
+<div class="container-fluid">
+  <div class="row mt-4 w-100">
+    <div class="col-6">
+        <h1 class="mb-4"> <%= @car.brand %> <%= @car.model %> </h1>
+      <div class="col-10">
+        <div class="profile-holder align-middle">
+          <p>Membre : <%= @car.user.first_name %> <%= @car.user.last_name %> </p>
+          <p>Ancienneté</p>
+          <p>Avatar</p>
+        </div>
+      </div>
+        <div class="show-content mt-4">
+          <p>Véhicule de <%= @car.year_of_production %> </p>
+          <p> </p>
+        </div>
+    </div>
+      <div class="col-6 d-flex justify-content-center">
+        <%= cl_image_tag(@car.photo.key, width: "600", height: "auto") %>
+      </div>
+  </div>
+</div>
